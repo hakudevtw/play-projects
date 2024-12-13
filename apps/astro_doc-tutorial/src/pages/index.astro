@@ -1,0 +1,15 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Greeting from "@components/Greeting";
+
+const pageTitle = "Home Page";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h2>My awesome blog subtitle</h2>
+  <!-- 
+    client:visible - send js when the component is visible
+    client:load - send and rerun js on client when page loads to hydrate
+  -->
+  <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+</BaseLayout>
